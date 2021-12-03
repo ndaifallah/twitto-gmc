@@ -12,6 +12,15 @@ class Postlist extends Component {
     return (
       <div>
         <List
+        style={{
+          background:' rgba(255, 255, 255, 0.5)',
+          borderRadius:' 16px',
+          boxShadow:' 0 4px 30px rgba(0, 0, 0, 0.1)',
+          backdropFilter: 'blur(5px)',
+          webkitBackdropFilter:' blur(5px)',
+          border:' 1px solid rgba(255, 255, 255, 0.3)',
+          padding:'1rem'
+        }}
           itemLayout="horizontal"
           dataSource={data}
           renderItem={(item) => (

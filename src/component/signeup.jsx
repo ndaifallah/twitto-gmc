@@ -39,15 +39,30 @@ import { Form, Input, Button, Checkbox } from 'antd';
       onFinish(values){
         console.log('Success:', values);
       }
-    onFinish(values){
-        console.log('Success:', values);
-      }
     render() {
         
         return (
- <div>
+ <div style={{
+    diplay:'flex',
+    justifyContent:'center',
+    alignItems:'center',
+    background:' rgba(255, 255, 255, 0.2)',
+    borderRadius:' 16px',
+    boxShadow:' 0 4px 30px rgba(0, 0, 0, 0.1)',
+    backdropFilter: 'blur(5px)',
+    webkitBackdropFilter:' blur(5px)',
+    border:' 1px solid rgba(255, 255, 255, 0.3)',
+    height:'400px',
+    width:'500px',
+
+ }}>
  
  <Form
+      style={{
+        paddingTop:'5rem',
+        paddingLeft:'1rem'
+      }}
+
       name="basic"
       labelCol={{
         span: 8,

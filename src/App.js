@@ -5,7 +5,11 @@ import LoginContainer from './containers/loginContainer';
 import Signeup from './component/signeup';
 import Feedcontainer from './containers/Feedcontainer';
 import { Provider } from 'react-redux';
-import background from './img/background.jpg'
+import background from './img/background.jpg';
+import {BrowserRouter, Route} from "react-router-dom";
+import { Switch } from 'react-router-dom';
+import Login from './components/login';
+
 
 
 import store from './redux/store';
@@ -25,12 +29,20 @@ class App extends Component {
       }}>
 
 
-
       <Provider store={store}>
-        <LoginContainer></LoginContainer>
-        <Feedcontainer />
-      </Provider>
+        <BrowserRouter>
+        <Switch>
 
+         <Route exact path='/'component={Signeup}/>
+         <Route exact path='/feed'component={Feedcontainer}/>
+         <Route exact path='/login'component={LoginContainer}/>
+         
+            
+        </Switch>
+         
+
+        </BrowserRouter>
+      </Provider>
     </div>
   );
 }

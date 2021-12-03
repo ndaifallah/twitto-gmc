@@ -13,20 +13,23 @@ class Login extends Component {
         }
     }
     
-    
     async loginfunction(){
         console.log("test")
-        await fetch('https://ant.design/components/form/', {
+        let data={
             method:'POST',
             headers:{
-                'Content type' : 'application/json'
+                'Content-Type' : 'application/json'
             },
             body:JSON.stringify({
-                username:this.state.username,
-                password:this.state.password
+                user_name:'this.state.username',
+                password:'this.state.password'
             })
+            
 
-        })
+        };
+        await fetch('http://localhost:780/login', data )
+        let response=await data.json()
+        console.log(response)
     }
     
     render() {

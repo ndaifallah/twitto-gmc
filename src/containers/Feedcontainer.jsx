@@ -10,9 +10,12 @@ export default class Feedcontainer extends Component {
                 width:'600px',
                 margin:'auto',
                 marginTop:'4rem',
-                border:'solid grey 1px',
-                padding:'3rem',
-                borderRadius:'1rem'
+                padding:'3rem', background:' rgba(255, 255, 255, 0.2)',
+                borderRadius:' 16px',
+                boxShadow:' 0 4px 30px rgba(0, 0, 0, 0.1)',
+                backdropFilter: 'blur(5px)',
+                webkitBackdropFilter:' blur(5px)',
+                border:' 1px solid rgba(255, 255, 255, 0.3)',
             }}>
                 <Postinput/>
                 <Postlist/>
