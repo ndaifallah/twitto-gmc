@@ -1,11 +1,13 @@
-
+import React, { Component } from 'react'
+import 'antd/dist/antd.css'
 import './App.css';
 import LoginContainer from './containers/loginContainer';
-import { Component } from 'react';
-import background from './img/background.jpg'
+import Signeup from './component/signeup';
 import Feedcontainer from './containers/Feedcontainer';
-import 'antd/dist/antd.css'
 import { Provider } from 'react-redux';
+import background from './img/background.jpg'
+
+
 import store from './redux/store';
 
 class App extends Component {
@@ -33,5 +35,6 @@ class App extends Component {
   );
 }
 }
+
 
 export default App;
