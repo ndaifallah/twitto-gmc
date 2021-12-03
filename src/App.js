@@ -1,10 +1,10 @@
 
-import { Components } from 'antd/lib/date-picker/generatePicker';
 import './App.css';
 import LoginContainer from './containers/loginContainer';
+import { Component } from 'react';
 import background from './img/background.jpg'
 
-class App extends Components {
+class App extends Component {
   render(){
 
     return (
