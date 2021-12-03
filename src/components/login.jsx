@@ -4,7 +4,34 @@ import 'antd/dist/antd.css'
 
 
 class Login extends Component {
+    constructor(props) {
+        super(props)
+    
+        this.state = {
+            username: '',
+            password:''
+        }
+    }
+    
+    
+    async loginfunction(){
+        console.log("test")
+        await fetch('https://ant.design/components/form/', {
+            method:'POST',
+            headers:{
+                'Content type' : 'application/json'
+            },
+            body:JSON.stringify({
+                username:this.state.username,
+                password:this.state.password
+            })
+
+        })
+    }
+    
     render() {
+        console.log('username= '+this.state.username+' mdp= '+this.state.password)
+
             const onFinish = (values) => {
               console.log('Success:', values);
             };
@@ -12,7 +39,7 @@ class Login extends Component {
             const onFinishFailed = (errorInfo) => {
               console.log('Failed:', errorInfo);
             };
-        
+            
         
         return (
             <div style={{
@@ -38,6 +65,7 @@ class Login extends Component {
       autoComplete="off"
     >
       <Form.Item
+        onChange={e =>this.setState({username:e.target.value})}
         label="Username"
         name="username"
         rules={[
@@ -51,6 +79,7 @@ class Login extends Component {
       </Form.Item>
 
       <Form.Item
+       onChange={e =>this.setState({password:e.target.value})}
         label="Password"
         name="password"
         rules={[
@@ -80,7 +109,7 @@ class Login extends Component {
           span: 16,
         }}
       >
-        <Button type="primary" htmlType="submit">
+        <Button type="primary" htmlType="submit" onClick={this.loginfunction} >
           Submit
         </Button>
       </Form.Item>
