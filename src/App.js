@@ -9,7 +9,7 @@ import { Route, Switch } from "react-router";
 import { BrowserRouter as Router } from "react-router-dom";
 
 import store from "./redux/store";
-import Login from "./components/login";
+import Login from "./components/Login";
 
 class App extends Component {
   render() {
