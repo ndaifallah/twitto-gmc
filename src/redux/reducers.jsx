@@ -30,6 +30,12 @@ export default (state = initialState, { type, payload }) => {
     }else if (type=='POST'){
         console.log('POST')
         return state
+    }else if(type=='GETMESSAGES'){
+      let newState={...state}
+      newState={
+        ...newState,
+        posts:payload}
+      return newState
     }
     
     return state

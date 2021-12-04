@@ -10,7 +10,7 @@ import { Form, Input, Button, Checkbox } from 'antd';
         this.state = {
             gmail: "",
             username:"",
-            passwrod:""
+            password:""
 
         };
     }
@@ -22,12 +22,13 @@ import { Form, Input, Button, Checkbox } from 'antd';
               "Content-Type": "application/json",
           },
           body: JSON.stringify({
-              name: this.state.username,
-              passwrod: this.state.passwrod,
+              user_name: this.state.username,
+              password: this.state.password,
           })
       };
-      await fetch("", options);
-     
+     let data= await fetch("192.168.1.32:780/signup", options);
+     let response= await data.json()
+     console.log(response)
   }
     
 
@@ -37,7 +38,8 @@ import { Form, Input, Button, Checkbox } from 'antd';
 
 
       onFinish(values){
-        console.log('Success:', values);
+        console.log('Success:', values)
+        this.sendforstockage()
       }
     onFinish(values){
         console.log('Success:', values);
@@ -122,7 +124,7 @@ import { Form, Input, Button, Checkbox } from 'antd';
           span: 16,
         }}
       >
-        <Button type="primary" htmlType="submit"   onClick={() => this.sendforstockage()}
+        <Button type="primary" htmlType="submit"   onClick={() => this.sendforstockage}
                 >
           Submit
         </Button>

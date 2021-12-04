@@ -6,6 +6,25 @@ import { MapStateToProps , Provider} from "react-redux";
 
 
 class Postlist extends Component {
+  refrechMessages = async () => {
+    try{
+        var resp = await fetch("https://jsonplaceholder.typicode.com/posts");
+        var data = await resp.json();
+        console.log(data);
+        let dispatch = this.props.dispatch;
+        dispatch({
+            type: 'GETMESSAGES',
+            payload: data
+        })
+       
+    }catch (e) {
+        console.log(e);
+    }
+}
+componentDidMount = async () => {
+    setInterval(() => this.refrechMessages(), 3000);
+}
+ 
   render() {
     const data = this.props.posts
       console.log(this.props.posts)
