@@ -25,7 +25,7 @@ class Signeup extends Component {
           password: password,
         })
     };
-    let response = await fetch("http://192.168.1.32:780/signup", options);
+    let response = await fetch("http://localhost:780/signup", options);
     console.log(response)
     if(response.status==200){
       this.props.history.push('/login',[])

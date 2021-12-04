@@ -26,12 +26,13 @@ class Login extends Component {
               password: password,
             })
         };
-        let response = await fetch("http://192.168.1.32:780/login", options);
+        let response = await fetch("http://localhost:780/login", options);
         console.log(response)
         let data= await response.json()
         console.log(data)
         localStorage.setItem('TOKEN', JSON.stringify(data.token));
         if(response.status==200){
+          
           this.props.history.push('/feed',[])
         }
       }

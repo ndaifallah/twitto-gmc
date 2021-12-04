@@ -17,7 +17,7 @@ export default class Postinput extends Component {
     async postMessage(message){
         try{
             
-            await fetch('http://192.168.1.32:780/sendposts',{
+            await fetch('http://localhost:780/sendposts',{
                 method:'POST',
                 headers:{
                     "Content-Type":"application/json",

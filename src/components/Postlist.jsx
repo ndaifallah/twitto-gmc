@@ -8,7 +8,7 @@ import { MapStateToProps , Provider} from "react-redux";
 class Postlist extends Component {
   refrechMessages = async () => {
     try{
-        var resp = await fetch("http://192.168.1.32:780/getallposts",{
+        var resp = await fetch("http://localhost:780/getallposts",{
           method: "GET",
           headers: {
               "Content-Type": "application/json",
