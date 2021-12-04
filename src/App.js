@@ -8,7 +8,7 @@ import { Provider } from 'react-redux';
 import background from './img/background.jpg';
 import {BrowserRouter, Route} from "react-router-dom";
 import { Switch } from 'react-router-dom';
-import Login from './components/login';
+import Logout from './components/Logout';
 
 
 
@@ -31,6 +31,7 @@ class App extends Component {
 
       <Provider store={store}>
         <BrowserRouter>
+        <Logout/>
         <Switch>
 
          <Route exact path='/'component={Signeup}/>
