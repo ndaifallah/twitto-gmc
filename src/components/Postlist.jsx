@@ -8,9 +8,15 @@ import { MapStateToProps , Provider} from "react-redux";
 class Postlist extends Component {
   refrechMessages = async () => {
     try{
-        var resp = await fetch("https://jsonplaceholder.typicode.com/posts");
+        var resp = await fetch("http://192.168.1.32:780/getallposts",{
+          method: "GET",
+          headers: {
+              "Content-Type": "application/json",
+              "AuthToken": JSON.parse(localStorage.getItem("TOKEN"))
+          },
+        });
         var data = await resp.json();
-        console.log(data);
+        console.log(data, "AAAAAAAAAAAAAA");
         let dispatch = this.props.dispatch;
         dispatch({
             type: 'GETMESSAGES',
@@ -22,7 +28,7 @@ class Postlist extends Component {
     }
 }
 componentDidMount = async () => {
-    setInterval(() => this.refrechMessages(), 3000);
+    setInterval(this.refrechMessages,8000);
 }
  
   render() {
@@ -37,8 +43,8 @@ componentDidMount = async () => {
             <List.Item>
               <List.Item.Meta
                 avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
-                title={<p> {item.title} </p>}
-                description={item.content}
+                title={<p> {item.user.user_name} </p>}
+                description={item.text}
               />
             </List.Item>
           )}

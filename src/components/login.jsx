@@ -14,26 +14,35 @@ class Login extends Component {
     }
     
     
-    async loginfunction(){
-        console.log("test")
-        await fetch('https://ant.design/components/form/', {
-            method:'POST',
-            headers:{
-                'Content type' : 'application/json'
+  
+    loginfunction = async (username,password) => {
+        let options = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
             },
-            body:JSON.stringify({
-                user_name:this.state.username,
-                password:this.state.password
+            body: JSON.stringify({
+              user_name: username,
+              password: password,
             })
-
-        })
-    }
+        };
+        let response = await fetch("http://192.168.1.32:780/login", options);
+        console.log(response)
+        let data= await response.json()
+        console.log(data)
+        localStorage.setItem('TOKEN', JSON.stringify(data.token));
+        if(response.status==200){
+          this.props.history.push('/feed',[])
+        }
+      }
     
     render() {
         console.log('username= '+this.state.username+' mdp= '+this.state.password)
 
             const onFinish = (values) => {
               console.log('Success:', values);
+              console.log('TEST TEST TEST')
+              this.loginfunction(this.state.username,this.state.password)
             };
         
             const onFinishFailed = (errorInfo) => {
@@ -109,8 +118,11 @@ class Login extends Component {
           span: 16,
         }}
       >
-        <Button type="primary" htmlType="submit" onClick={this.loginfunction} >
+        <Button type="primary" htmlType="submit"  >
           Submit
+        </Button>
+        <Button type='primary' onClick={()=>this.loginfunction(this.state.username,this.state.password)}>
+            test
         </Button>
       </Form.Item>
     </Form>

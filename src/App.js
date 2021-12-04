@@ -10,6 +10,7 @@ import { Route, Switch } from "react-router";
 import { BrowserRouter as Router } from "react-router-dom";
 
 import store from "./redux/store";
+import Login from "./components/login";
 
 class App extends Component {
   render() {
@@ -30,8 +31,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={Signeup} />
               <Route exact path="/feed" component={Feedcontainer} />
-              {/* <LoginContainer></LoginContainer>
-              <Feedcontainer /> */}
+              <Route exact path ='/login' component={Login}/>
             </Switch>
           </Router>
         </Provider>

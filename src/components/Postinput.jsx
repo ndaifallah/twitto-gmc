@@ -14,18 +14,17 @@ export default class Postinput extends Component {
              message:''
         }
     }
-    async postMessage(){
+    async postMessage(message){
         try{
             
-            console.log('test')
-            await fetch('https://ant.design/components/button/',{
+            await fetch('http://192.168.1.32:780/sendposts',{
                 method:'POST',
                 headers:{
-                    'Content type':'application/json'
+                    "Content-Type":"application/json",
+                    "AuthToken":JSON.parse(localStorage.getItem("TOKEN"))
                 },
                 body:JSON.stringify({
-                    user:'',
-                    content:this.state.message
+                    text:message
                 })
             })
         }catch{
@@ -42,7 +41,7 @@ export default class Postinput extends Component {
                 marginBottom:'2rem'
             }}>
                 <TextArea showCount maxLength={100} style={{ height: 80 }} onChange={e=> this.setState({message:e.target.value})} value={this.state.message} />
-                <Button type="primary" onClick={this.postMessage}>Post</Button>
+                <Button type="primary" onClick={e=> this.postMessage(this.state.message)}>Post</Button>
             </div>
         )
     }
