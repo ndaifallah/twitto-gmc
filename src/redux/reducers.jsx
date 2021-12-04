@@ -3,19 +3,19 @@ const initialState = {
     posts:[
         {
           title: "First message",
-          content:'placeholder content'
+          text:'placeholder text'
         },
         {
           title: "Ant Design Title 2",
-          content:'placeholder content'
+          text:'placeholder text'
         },
         {
           title: "Ant Design Title 3",
-          content:'placeholder content'
+          text:'placeholder text'
         },
         {
           title: "Ant Design Title 4",
-          content:'placeholder content'
+          text:'placeholder text'
         },
       ]
 }

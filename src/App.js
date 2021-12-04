@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "antd/dist/antd.css";
 import "./App.css";
-import LoginContainer from "./containers/loginContainer";
 import Signeup from "./component/signeup";
 import Feedcontainer from "./containers/Feedcontainer";
 import { Provider } from "react-redux";

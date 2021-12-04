@@ -16,11 +16,10 @@ class Postlist extends Component {
           },
         });
         var data = await resp.json();
-        console.log(data, "AAAAAAAAAAAAAA");
         let dispatch = this.props.dispatch;
         dispatch({
             type: 'GETMESSAGES',
-            payload: data
+            payload: data 
         })
        
     }catch (e) {
@@ -43,7 +42,7 @@ componentDidMount = async () => {
             <List.Item>
               <List.Item.Meta
                 avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
-                title={<p> {item.user.user_name} </p>}
+                title={<p> {item.user?.user_name} </p>}
                 description={item.text}
               />
             </List.Item>
