@@ -32,12 +32,12 @@ class Signeup extends Component {
     }
   }
 
-  onFinish(values) {
-    console.log("Success:", values);
-  }
-  onFinish(values) {
-    console.log("Success:", values);
-  }
+  // onFinish(values) {
+  //   console.log("Success:", values);
+  // }
+  // onFinish(values) {
+  //   console.log("Success:", values);
+  // }
   render() {
     return (
       <div>
@@ -126,15 +126,8 @@ class Signeup extends Component {
               span: 16,
             }}
           >
-            <Button
-              type="primary"
-              htmlType="submit"
-              onClick={() => this.sendforstockage}
-            >
-              SignUp
-            </Button>
             <Button type='primary' onClick={()=>this.signup(this.state.username,this.state.password)}>
-              test
+              Sign Up
             </Button>
           </Form.Item>
         </Form>

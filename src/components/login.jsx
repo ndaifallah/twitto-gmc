@@ -118,11 +118,8 @@ class Login extends Component {
           span: 16,
         }}
       >
-        <Button type="primary" htmlType="submit"  >
-          Submit
-        </Button>
         <Button type='primary' onClick={()=>this.loginfunction(this.state.username,this.state.password)}>
-            test
+            Log In
         </Button>
       </Form.Item>
     </Form>
