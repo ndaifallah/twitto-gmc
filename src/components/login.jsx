@@ -130,6 +130,7 @@ class Login extends Component {
             >
               Log In
             </Button>
+            <Button type='link' onClick={()=> this.props.history.push('/')}>I dont have an account</Button>
           </Form.Item>
         </Form>
       </div>
