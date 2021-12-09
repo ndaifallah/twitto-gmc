@@ -3,6 +3,7 @@ import "antd/dist/antd.css";
 
 import { Form, Input, Button, Checkbox } from "antd";
 
+
 class Signeup extends Component {
   constructor(props) {
     super(props);
@@ -128,6 +129,9 @@ class Signeup extends Component {
           >
             <Button type='primary' onClick={()=>this.signup(this.state.username,this.state.password)}>
               Sign Up
+            </Button>
+            <Button type='link' onClick={()=> this.props.history.push('/login')}> 
+              I already have an account
             </Button>
           </Form.Item>
         </Form>

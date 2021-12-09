@@ -22,13 +22,18 @@ const initialState = {
 
 export default (state = initialState, { type, payload }) => {
     if(type=='LOGIN'){
-        console.log('login')
-        return state
-    }else if (type=='REGISTER'){
-        console.log('REGISTER')
-        return state
-    }else if (type=='POST'){
-        console.log('POST')
+        
+        let newState= {...state, logged:true}
+        return newState
+    }else if (type=='LOGOUT'){
+        
+        let newState={...state, logged:false}
+        return newState
+    }else if (type=='ISLOGGED'){
+      if(localStorage.getItem('TOKEN')){
+        let newState={...state,logged:true}
+        return newState
+      }
         return state
     }else if(type=='GETMESSAGES'){
       let newState={...state}
